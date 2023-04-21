@@ -1,0 +1,111 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+
+}
+body
+{
+    width: 100%;
+    height: 100%;
+   background-color: black  ;
+}
+main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.titulo
+{
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    color: whitesmoke;
+}
+.descricao
+{
+    color: whitesmoke;
+}
+.img
+{
+    width: 100%;
+    height:250px;
+}
+.f_form
+{
+    display: flex;
+    justify-content: center;
+}
+.votar
+{
+    margin-top: 5%;
+    display: flex;
+
+    height: 75px;
+}
+.votar input
+{
+    width: 250px;
+    outline: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.votar button
+{
+    width: 50px;
+    background-color: rgb(42, 40, 40);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.votar button:hover
+{
+    transition: 1s;
+    color: black;
+    background-color: rgb(238, 238, 156);
+}
+.votar button:not(:hover)
+{
+    color: white;
+    transition: 1s;
+}
+.eleitores
+{
+    width: 150px;
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0f0f0f;
+    border-radius: 3px;
+    color: wheat;
+    margin-bottom: 5%;
+}   
+.line
+{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:5%;
+}
+.cand_img
+{
+    width: 150px;
+    height: 150px;
+    border-radius: 3px;
+}
+
+.exit
+{
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    top: 10px;
+    position: absolute;
+}

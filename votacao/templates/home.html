@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css'  %}">
+    <title>Home</title>
+</head>
+<body>
+    <h1 class="titulo">Votanium</h1>
+
+    <h3>Votações em andamento</h3>
+    
+    <main>
+        <div class="votacoes">
+
+            {% for eleicoes in votacao %}
+
+            <a href="{% url 'Vote' eleicoes.id %}">
+                <div class="votacao">
+
+                    <img src='{{eleicoes.foto.url}}' alt="" width="250px" height="250px">
+                    <p>{{eleicoes}}</p>
+
+                </div>
+            
+            
+            {% endfor %}
+
+        </div>
+    </main>
+</body>
+</html>

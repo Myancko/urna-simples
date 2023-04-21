@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/votar.css'  %}">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+
+        <div>
+            <a href="{% url 'Home' %}">
+                <img class="exit" src="{% static 'img/Back_Arrow.svg.png' %}" alt="">
+            </a>
+        </div>
+        <img class="img" src="{{votacao.foto.url}}" alt="">
+
+        <div class="vote">
+            <div class="titulo">
+                <p>{{votacao.nome}}</p>
+            </div>
+            
+            <div class="descricao">
+                <p>Descricão:</p>
+                <p>{{votacao.descricao}}</p>
+            </div>
+            
+        </div>
+
+        <form class="f_form" method="post" >
+            {%csrf_token%}
+            <div class="votar">
+
+                <input type="number" placeholder="Digite o numero do seu candidato"  name="voto" min="0" max="9999">
+                <button type="submit">Votar</button>
+
+            </div>
+
+        </form>
+
+        <div class="line">
+
+            
+                {% for usuario in votacao.participantes.all %}
+                    <div class="eleitores">
+                        <img class="cand_img" src="{{usuario.photo.url}}" alt="">
+                        <p>{{usuario}}</p>
+                        <p>Numero: {{usuario.numero}}</p>
+                        <p>total de votos: {{usuario.total_de_votos}}</p>
+                    </div>
+                {% endfor %}
+            
+
+        </div>
+
+    </main>
+</body>
+</html>

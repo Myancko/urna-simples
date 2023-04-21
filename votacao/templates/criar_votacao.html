@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar</title>
+</head>
+<body>
+    <h1>-Crie uma votação-</h1>
+
+    <form action="" method="post" enctype='multipart/form-data'>
+        {%csrf_token%}
+
+        <div class="nome">
+            {{ form.nome.errors }}
+            {{ form.nome.label }}
+            {{ form.nome }}
+        </div>
+
+        <div class="descricao">
+            {{ form.descricao.errors }}
+            {{ form.descricao.label }}
+            {{ form.descricao }}
+        </div>
+
+        <div class="fim">
+            {{ form.fim.errors }}
+            {{ form.fim.label }}
+            {{ form.fim }}
+        </div>
+
+        <div class="participantes">
+            {{ form.participantes.errors }}
+            {{ form.participantes.label }}
+            {{ form.participantes }}
+        </div>
+
+        <div class="foto">
+            {{ form.foto.errors }}
+            {{ form.foto.label }}
+            {{ form.foto }}
+        </div>
+
+        <button type="submit">Criar votação</button>
+
+    </form>
+
+</body>
+</html>
